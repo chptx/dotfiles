@@ -1,0 +1,116 @@
+#!/bin/bash
+
+# welcom: A stupid serial communication tool for linux.
+
+#Author: chptx
+#Date: 03/13/2011
+#Version: 0.0.6
+
+pname="welcom"
+pversion="0.0.6"
+
+#report the status of
+#terminated backgroud jobs immediately
+set -m -b
+
+conf=
+dev=
+
+prog=`basename $0`
+
+function usage {
+    echo "Usage: $prog [param] [device]"
+    echo "	-c file	   - config file (~/.welcomrc is default)"
+    echo "	-v         - show version"
+    echo "	-h         - this help"
+}
+
+function cfg {
+	local key
+	key=$1
+	if [ ! -e "$2" ]; then
+		echo ""
+		return
+	fi
+	awk -F: "/^$key:/{print \$2}" $2
+}
+
+while getopts c:vh opt ; do
+	case "$opt" in
+	c) conf="$OPTARG" ;;
+	v) echo $pname version: $pversion; exit 0 ;;
+	h) usage; exit 0 ;;
+	*) usage; exit 1 ;;
+	esac
+done
+
+if [ -n "$conf" -a ! -e "$conf" ]; then
+	echo "$conf not exist"
+	exit
+fi
+
+conf=${conf:-"$HOME/.welcomrc"}
+shift $(($OPTIND - 1))
+if [ -z "$1" -a ! -e "$conf" ]; then
+	echo "device not specified and no $conf "
+	exit
+fi
+
+dev=${1:-$(cfg device $conf)}
+if [ -z "$dev" ]; then
+	echo "device not specified"
+	exit
+fi
+
+if [ ! -e "$dev" ]; then
+	echo "device($dev) not exist"
+	exit
+fi
+
+echo "welcom version is $pversion."
+echo "device: $dev"
+ttysetting=$(cfg param $conf)
+if [ -n "$ttysetting" ]; then
+	echo "parameters is set to ($ttysetting)"
+	stty -F $dev $ttysetting
+##	if [ "$(wait $mypid)" = "0" ]; then
+#		echo "parameters set fail!"
+#		exit -1
+#	fi
+fi
+
+if exec 5<>$dev ; then
+	echo "open device $dev sucessfully"
+else
+	echo "open device $dev FAIL!!!!"
+	exit 1
+fi
+
+cat <&5 &
+mypid=$!
+function ex {
+	if [ -d "/proc/$mypid" ]; then kill $mypid; fi
+	echo "welcom has quit. Bye!";
+}
+
+function readex {
+	echo "reading error!";
+	exit;
+}
+
+trap ex EXIT
+
+#only one bg jobs there(cat)?
+trap readex SIGCHLD
+
+echo "---READY!---"
+IFS=
+while read -s -N 1 str; do
+	if [ "$str" = $'\n' ]; then
+		echo -ne "\r" >&5
+	elif [ "$str" = $'\x7f' ]; then
+		echo -ne "\b" >&5
+	else
+		echo -ne "$str" >&5
+	fi
+done

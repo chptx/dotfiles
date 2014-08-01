@@ -1,0 +1,2 @@
+device:/dev/ttyUSB0
+param:115200 min 1 -echo -icanon
