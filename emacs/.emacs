@@ -30,7 +30,7 @@
  '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
 ;(set-frame-font "Caecilia LT Medium-12")
-(set-fontset-font "fontset-default" 'han '("文泉驿等宽正黑"))
+(set-fontset-font "fontset-default" 'han '("文泉驿等宽微米黑"))
 
 (require 'package)
 ;(add-to-list 'package-archives
