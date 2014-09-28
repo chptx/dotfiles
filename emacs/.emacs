@@ -29,6 +29,9 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
+;(set-frame-font "Caecilia LT Medium-12")
+(set-fontset-font "fontset-default" 'han '("文泉驿等宽正黑"))
+
 (require 'package)
 ;(add-to-list 'package-archives
 ;             '("marmalade" . "http://marmalade-repo.org/packages/"))
