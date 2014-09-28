@@ -82,7 +82,7 @@
 ;(set-background-color "#a9ccb5")
 
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-;(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode-enable)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 ;(global-rainbow-delimiters-mode)
 (require 'vc)
 (remove-hook 'find-file-hooks 'vc-find-file-hook)
