@@ -94,3 +94,13 @@
                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 (multi-web-global-mode 1)
+
+(defun app-reset ()
+  (interactive)
+  (dolist (buffer (buffer-list))
+    (let ((name (buffer-name buffer)))
+      (when (string-match "^\*cider-repl.*\*$" name)
+        (set-buffer name))))
+  (goto-char (point-max))
+  (insert "(user/reset)")
+  (cider-repl-return))
