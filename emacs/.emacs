@@ -95,6 +95,9 @@
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 (multi-web-global-mode 1)
 
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+(blink-cursor-mode)
+
 (defun app-reset ()
   (interactive)
   (dolist (buffer (buffer-list))
