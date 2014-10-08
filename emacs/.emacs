@@ -98,6 +98,8 @@
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (blink-cursor-mode)
 
+(global-set-key "\C-x\C-b" 'buffer-menu)
+
 (defun app-reset ()
   (interactive)
   (dolist (buffer (buffer-list))
