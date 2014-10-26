@@ -29,7 +29,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
  '(idle-highlight ((t (:inherit highlight))))
- '(region ((t (:inherit t :background "#9d550f")))))
+ '(region ((t (:inherit t :background "#9d550f" :foreground "#fffff8")))))
 
 ;(set-frame-font "Caecilia LT Medium-12")
 (set-fontset-font "fontset-default" 'han '("文泉驿等宽微米黑"))
