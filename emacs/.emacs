@@ -111,3 +111,4 @@
   (goto-char (point-max))
   (insert "(user/reset)")
   (cider-repl-return))
+(put 'narrow-to-region 'disabled nil)
