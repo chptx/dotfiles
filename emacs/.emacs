@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#272822" "#F92672" "#A6E22E" "#E6DB74" "#66D9EF" "#FD5FF0" "#A1EFE4" "#F8F8F2"])
  '(compilation-message-face (quote default))
- '(custom-safe-themes (quote ("180373619ad513afbc237db6245825289a2f0c08178f9719d1b60c38a4f5cd98" "6f063a28e702ac2c4a93ed071046dcde54f04358bf5dbe684d76840ecba51127" "60f04e478dedc16397353fb9f33f0d895ea3dab4f581307fbf0aa2f07e658a40" "2b5aa66b7d5be41b18cc67f3286ae664134b95ccc4a86c9339c886dfd736132d" "4eaad15465961fd26ef9eef3bee2f630a71d8a4b5b0a588dc851135302f69b16" "769bb56fb9fd7e73459dcdbbfbae1f13e734cdde3cf82f06a067439568cdaa95" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "86f4407f65d848ccdbbbf7384de75ba320d26ccecd719d50239f2c36bec18628" "50edb7914e8d369bc03820d2dcde7e74b7efe2af5a39511d3a130508e2f6ac8f" "f263b0c8fffa9440f03ad4769eae39581594a3716074c482b8821b2555c50a8d" "19388fbc7fe94e56c9e4daf7e09df04c75bb3d6ee830676391e60692a6eff096" "e5ebbf07515ffeafd152ea1d0e1288ed2222ee725f022932ddd3e4b0cf3148d7" "0795e2c85394140788d72d34969be4acb305e4a54149e7237787d9df27832fbb" default)))
+ '(custom-safe-themes (quote ("756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "180373619ad513afbc237db6245825289a2f0c08178f9719d1b60c38a4f5cd98" "6f063a28e702ac2c4a93ed071046dcde54f04358bf5dbe684d76840ecba51127" "60f04e478dedc16397353fb9f33f0d895ea3dab4f581307fbf0aa2f07e658a40" "2b5aa66b7d5be41b18cc67f3286ae664134b95ccc4a86c9339c886dfd736132d" "4eaad15465961fd26ef9eef3bee2f630a71d8a4b5b0a588dc851135302f69b16" "769bb56fb9fd7e73459dcdbbfbae1f13e734cdde3cf82f06a067439568cdaa95" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "86f4407f65d848ccdbbbf7384de75ba320d26ccecd719d50239f2c36bec18628" "50edb7914e8d369bc03820d2dcde7e74b7efe2af5a39511d3a130508e2f6ac8f" "f263b0c8fffa9440f03ad4769eae39581594a3716074c482b8821b2555c50a8d" "19388fbc7fe94e56c9e4daf7e09df04c75bb3d6ee830676391e60692a6eff096" "e5ebbf07515ffeafd152ea1d0e1288ed2222ee725f022932ddd3e4b0cf3148d7" "0795e2c85394140788d72d34969be4acb305e4a54149e7237787d9df27832fbb" default)))
  '(fci-rule-color "#49483E")
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors (quote (("#49483E" . 0) ("#67930F" . 20) ("#349B8D" . 30) ("#21889B" . 50) ("#968B26" . 60) ("#A45E0A" . 70) ("#A41F99" . 85) ("#49483E" . 100))))
@@ -101,6 +101,14 @@
 (blink-cursor-mode)
 
 (global-set-key "\C-x\C-b" 'buffer-menu)
+
+(powerline-center-theme)
+
+(custom-set-faces
+ '(mode-line-buffer-id ((t (:inherit t :foreground "#008000" :bold t))))
+ '(which-func ((t (:foreground "#008000"))))
+ '(mode-line ((t (:foreground "#005000" :background "#dddddd" :box nil))))
+ '(mode-line-inactive ((t (:inherit t :foreground "#005000" :background "#555555" :box nil)))))
 
 (defun app-reset ()
   (interactive)
