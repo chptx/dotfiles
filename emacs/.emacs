@@ -100,7 +100,8 @@
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (blink-cursor-mode)
 
-(global-set-key "\C-x\C-b" 'buffer-menu)
+;;(global-set-key "\C-x\C-b" 'buffer-menu)
+(global-set-key "\C-x\C-b" 'helm-buffers-list)
 
 (powerline-center-theme)
 
