@@ -106,7 +106,7 @@
 (powerline-center-theme)
 
 (custom-set-faces
- '(mode-line-buffer-id ((t (:inherit t :foreground "#008000" :bold t))))
+ '(mode-line-buffer-id ((t (:inherit t :foreground "#800000" :bold t))))
  '(which-func ((t (:foreground "#008000"))))
  '(mode-line ((t (:foreground "#800000" :background "#dddddd" :box nil))))
  '(mode-line-inactive ((t (:inherit t :foreground "#800000" :background "#555555" :box nil)))))
