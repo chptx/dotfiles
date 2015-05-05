@@ -103,13 +103,14 @@
 ;;(global-set-key "\C-x\C-b" 'buffer-menu)
 (global-set-key "\C-x\C-b" 'helm-buffers-list)
 
-(powerline-center-theme)
+(which-function-mode)
+(powerline-default-theme)
 
 (custom-set-faces
- '(mode-line-buffer-id ((t (:inherit t :foreground "#800000" :bold t))))
- '(which-func ((t (:foreground "#008000"))))
- '(mode-line ((t (:foreground "#800000" :background "#dddddd" :box nil))))
- '(mode-line-inactive ((t (:inherit t :foreground "#800000" :background "#555555" :box nil)))))
+ ;'(mode-line-buffer-id ((t (:inherit t))))
+ '(which-func ((t (:foreground "DeepSkyBlue"))))
+ '(mode-line ((t (:foreground "LimeGreen"))))
+ '(mode-line-inactive ((t (:inherit t :foreground "DarkGreen")))))
 
 (defun app-reset ()
   (interactive)
