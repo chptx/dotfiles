@@ -131,7 +131,7 @@ cnoremap <Esc><C-B>	<S-Left>
 cnoremap <Esc><C-F>	<S-Right>
 
 
-set guifont=Monaco\ 11
+set guifont=Monaco\ for\ Powerline\ 11
 
 
 "let g:clj_highlight_builtins=1      " Highlight Clojure's builtins
