@@ -28,8 +28,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
- '(idle-highlight ((t (:inherit highlight))))
- '(region ((t (:inherit t :background "#9d550f" :foreground "#fffff8")))))
+ '(idle-highlight ((t (:inherit highlight)))))
 
 ;(set-frame-font "Caecilia LT Medium-12")
 (set-fontset-font "fontset-default" 'han '("文泉驿等宽微米黑"))
@@ -78,7 +77,8 @@
 ;(load-theme 'myfav t)
 
 ;(load-theme 'zen-and-art t)
-(load-theme 'monokai t)
+;(load-theme 'monokai t)
+(load-theme 'material t)
 ;(set-background-color "#c7edcc")
 ;(set-background-color "#b6d9ba")
 ;(set-background-color "#a9ccb5")
@@ -106,11 +106,11 @@
 (which-function-mode)
 (powerline-default-theme)
 
-(custom-set-faces
- ;'(mode-line-buffer-id ((t (:inherit t))))
- '(which-func ((t (:foreground "DeepSkyBlue"))))
- '(mode-line ((t (:foreground "LimeGreen"))))
- '(mode-line-inactive ((t (:inherit t :foreground "DarkGreen")))))
+;; (custom-set-faces
+;;  ;'(mode-line-buffer-id ((t (:inherit t))))
+;;  '(which-func ((t (:foreground "DeepSkyBlue"))))
+;;  '(mode-line ((t (:foreground "LimeGreen"))))
+;;  '(mode-line-inactive ((t (:inherit t :foreground "DarkGreen")))))
 
 (defun app-reset ()
   (interactive)
