@@ -119,6 +119,6 @@
       (when (string-match "^\*cider-repl.*\*$" name)
         (set-buffer name))))
   (goto-char (point-max))
-  (insert "(user/reset)")
+  (insert "(reloaded.repl/reset)")
   (cider-repl-return))
 (put 'narrow-to-region 'disabled nil)
