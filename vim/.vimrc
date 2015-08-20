@@ -14,24 +14,24 @@ set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 
-function s:set4java()
-  set shiftwidth=4
-  set expandtab
-  set smarttab
-endfunction
-function g:set4spcshift()
-  set shiftwidth=4
-  set expandtab
-  set smarttab
-endfunction
-
-function s:set4c()
-    call g:set4spcshift()
-endfunction
-
-function s:set4py()
-    call g:set4spcshift()
-endfunction
+"function s:set4java()
+"  set shiftwidth=4
+"  set expandtab
+"  set smarttab
+"endfunction
+"function g:set4spcshift()
+"  set shiftwidth=4
+"  set expandtab
+"  set smarttab
+"endfunction
+"
+"function s:set4c()
+"    call g:set4spcshift()
+"endfunction
+"
+"function s:set4py()
+"    call g:set4spcshift()
+"endfunction
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
@@ -39,11 +39,11 @@ if has("autocmd")
   " In text files, always limit the width of text to 78 characters
   autocmd BufRead *.txt set tw=78
   " For java source files in Android. Added by YangMingzhao
-  autocmd BufRead *.java call s:set4java()
-  autocmd BufRead *.c call s:set4c()
-  autocmd BufRead *.h call s:set4c()
-  autocmd BufRead *.cpp call s:set4c()
-  autocmd BufRead *.py call s:set4py()
+  "autocmd BufRead *.java call s:set4java()
+  "autocmd BufRead *.c call s:set4c()
+  "autocmd BufRead *.h call s:set4c()
+  "autocmd BufRead *.cpp call s:set4c()
+  "autocmd BufRead *.py call s:set4py()
   " When editing a file, always jump to the last cursor position
   autocmd BufReadPost *
   \ if line("'\"") > 0 && line ("'\"") <= line("$") |
