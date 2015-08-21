@@ -118,8 +118,8 @@
 ;(load-theme 'myfav t)
 
 ;(load-theme 'zen-and-art t)
-;(load-theme 'monokai t)
-(load-theme 'material t)
+(load-theme 'monokai t)
+;(load-theme 'material t)
 ;(set-background-color "#c7edcc")
 ;(set-background-color "#b6d9ba")
 ;(set-background-color "#a9ccb5")
@@ -140,7 +140,7 @@
 
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (setq evil-insert-state-cursor '(box "sea green")
-      evil-normal-state-cursor '(box "dim gray"))
+      evil-normal-state-cursor '(box "gray"))
 (blink-cursor-mode)
 
 ;;(global-set-key "\C-x\C-b" 'buffer-menu)
