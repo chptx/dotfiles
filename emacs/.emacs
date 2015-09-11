@@ -157,6 +157,9 @@
 
 ;; but [escape] should switch back to normal state
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+(define-key evil-normal-state-map (kbd "M-.") 'cider-jump-to-var)
+(define-key evil-normal-state-map (kbd "M-,") 'cider-jump-back)
+(define-key evil-normal-state-map (kbd "C-c C-d g") 'cider-grimoire)
 
 ;; (custom-set-faces
 ;;  ;'(mode-line-buffer-id ((t (:inherit t))))
