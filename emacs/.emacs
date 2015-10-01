@@ -139,7 +139,7 @@
 (multi-web-global-mode 1)
 
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
-(setq evil-insert-state-cursor '(box "sea green")
+(setq evil-insert-state-cursor '(box "red")
       evil-normal-state-cursor '(box "gray"))
 (blink-cursor-mode)
 
