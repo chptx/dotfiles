@@ -69,7 +69,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
- '(mode-line ((t (:family "Arial" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
+ '(mode-line ((t (:family "Sans" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
  '(idle-highlight ((t (:inherit highlight)))))
 
 ;(set-frame-font "Caecilia LT Medium-12")
