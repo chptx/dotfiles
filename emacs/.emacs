@@ -69,6 +69,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
+ '(mode-line ((t (:family "Arial" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
  '(idle-highlight ((t (:inherit highlight)))))
 
 ;(set-frame-font "Caecilia LT Medium-12")
@@ -161,7 +162,6 @@
 (define-key evil-normal-state-map (kbd "M-,") 'cider-jump-back)
 (define-key evil-normal-state-map (kbd "C-c C-d g") 'cider-grimoire)
 
-(set-face-attribute 'mode-line nil  :height 110)
 ;; (custom-set-faces
 ;;  ;'(mode-line-buffer-id ((t (:inherit t))))
 ;;  '(which-func ((t (:foreground "DeepSkyBlue"))))
