@@ -63,14 +63,20 @@
  '(weechat-color-list
    (quote
     (unspecified "#272822" "#49483E" "#A20C41" "#F92672" "#67930F" "#A6E22E" "#968B26" "#E6DB74" "#21889B" "#66D9EF" "#A41F99" "#FD5FF0" "#349B8D" "#A1EFE4" "#F8F8F2" "#F8F8F0"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
- '(mode-line ((t (:family "Sans" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
- '(idle-highlight ((t (:inherit highlight)))))
+(let ((sans '((t (:family "Sans")))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
+   `(mode-line ,sans)
+   `(mode-line-buffer-id ,sans)
+   `(mode-line-emphasis ,sans)
+   `(mode-line-highlight ,sans)
+   `(mode-line-inactive ,sans)
+   `(minibuffer-prompt ,sans)
+   '(idle-highlight ((t (:inherit highlight))))))
 
 ;(set-frame-font "Caecilia LT Medium-12")
 (set-fontset-font "fontset-default" 'han '("文泉驿等宽微米黑"))
