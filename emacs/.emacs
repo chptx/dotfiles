@@ -69,7 +69,7 @@
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
+   '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 140 :width normal))))
    `(mode-line ,sans)
    `(mode-line-buffer-id ,sans)
    `(mode-line-emphasis ,sans)
@@ -84,9 +84,14 @@
 (require 'package)
 ;(add-to-list 'package-archives
 ;             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			  ;("marmalade" . "http://marmalade-repo.org/packages/")
-			   ("melpa" . "http://melpa.milkbox.net/packages/")))
+;(setq package-archives '(;("gnu" . "http://elpa.gnu.org/packages/")
+;			  ;("marmalade" . "http://marmalade-repo.org/packages/")
+;			   ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives 
+	'(("gnu-cn" . "http://elpa.codefalling.com/gnu/")
+	("org-cn" . "http://elpa.codefalling.com/org/")
+	("melpa-cn" . "http://elpa.codefalling.com/melpa/")))
+
 (package-initialize)
 
 (menu-bar-mode)
@@ -131,8 +136,8 @@
 ;(set-background-color "#b6d9ba")
 ;(set-background-color "#a9ccb5")
 
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+;(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+;(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 ;(global-rainbow-delimiters-mode)
 (require 'vc)
 (remove-hook 'find-file-hooks 'vc-find-file-hook)
@@ -144,6 +149,10 @@
 ;                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 ;(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 ;(multi-web-global-mode 1)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.ftl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (setq evil-insert-state-cursor '(box "red")
@@ -184,3 +193,20 @@
   (insert "(reloaded.repl/reset)")
   (cider-repl-return))
 (put 'narrow-to-region 'disabled nil)
+
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+      backup-by-copying t    ; Don't delink hardlinks
+      version-control t      ; Use version numbers on backups
+      delete-old-versions t  ; Automatically delete excess backups
+      kept-new-versions 20   ; how many of the newest versions to keep
+      kept-old-versions 5    ; and how many of the old
+      )
+
+(setq exec-path 
+      (cons
+       "/usr/local/bin"
+       exec-path))
+
+(autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
+(autoload 'run-scheme "cmuscheme" "Switch to interactive Scheme buffer." t)
+(setq auto-mode-alist (cons '("\\.ss" . scheme-mode) auto-mode-alist))
