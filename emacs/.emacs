@@ -22,6 +22,9 @@
      ("#A41F99" . 85)
      ("#49483E" . 100))))
  '(magit-diff-use-overlays nil)
+ '(package-selected-packages
+   (quote
+    (use-package elpy nyan-mode web-mode sr-speedbar rainbow-delimiters project-explorer powerline monokai-theme helm evil csv-nav)))
  '(show-paren-mode t)
  '(syslog-debug-face
    (quote
@@ -88,14 +91,14 @@
 ;			  ;("marmalade" . "http://marmalade-repo.org/packages/")
 ;			   ("melpa" . "http://melpa.milkbox.net/packages/")))
 (setq package-archives 
-	'(("gnu-cn" . "http://elpa.codefalling.com/gnu/")
-	("org-cn" . "http://elpa.codefalling.com/org/")
-	("melpa-cn" . "http://elpa.codefalling.com/melpa/")))
+    '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+      ("org-cn"   . "http://elpa.emacs-china.org/org/")
+      ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
 (package-initialize)
 
 (menu-bar-mode)
-;(tool-bar-mode)
+(tool-bar-mode 0)
 
 (setq-default inhibit-startup-screen t)
 
@@ -163,7 +166,7 @@
 (global-set-key "\C-x\C-b" 'helm-buffers-list)
 
 (which-function-mode)
-(powerline-default-theme)
+;(powerline-default-theme)
 
 (evil-mode 1)
 ;(defalias 'evil-insert-state 'evil-emacs-state)
@@ -210,3 +213,16 @@
 (autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
 (autoload 'run-scheme "cmuscheme" "Switch to interactive Scheme buffer." t)
 (setq auto-mode-alist (cons '("\\.ss" . scheme-mode) auto-mode-alist))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Monaco" :foundry "unknown" :slant normal :weight normal :height 140 :width normal))))
+ '(idle-highlight ((t (:inherit highlight))))
+ '(minibuffer-prompt ((t (:family "Sans"))))
+ '(mode-line ((t (:family "Sans"))))
+ '(mode-line-buffer-id ((t (:family "Sans"))))
+ '(mode-line-emphasis ((t (:family "Sans"))))
+ '(mode-line-highlight ((t (:family "Sans"))))
+ '(mode-line-inactive ((t (:family "Sans")))))
