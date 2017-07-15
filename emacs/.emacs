@@ -24,7 +24,7 @@
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
-    (use-package elpy nyan-mode web-mode sr-speedbar rainbow-delimiters project-explorer powerline monokai-theme helm evil csv-nav)))
+    (cider use-package elpy nyan-mode web-mode sr-speedbar rainbow-delimiters project-explorer powerline monokai-theme helm evil csv-nav)))
  '(show-paren-mode t)
  '(syslog-debug-face
    (quote
