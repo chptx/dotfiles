@@ -24,7 +24,7 @@
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
-    (cider use-package elpy nyan-mode web-mode sr-speedbar rainbow-delimiters project-explorer powerline monokai-theme helm evil csv-nav)))
+    (rjsx-mode cider use-package elpy nyan-mode web-mode sr-speedbar rainbow-delimiters project-explorer powerline monokai-theme helm evil csv-nav)))
  '(show-paren-mode t)
  '(syslog-debug-face
    (quote
@@ -159,7 +159,8 @@
 
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (setq evil-insert-state-cursor '(box "red")
-      evil-normal-state-cursor '(box "gray"))
+      evil-motion-state-cursor '(hollow "yellow")
+      evil-normal-state-cursor '(hollow "green"))
 (blink-cursor-mode)
 
 ;;(global-set-key "\C-x\C-b" 'buffer-menu)
@@ -168,6 +169,7 @@
 (which-function-mode)
 ;(powerline-default-theme)
 
+(setq evil-default-state 'insert)
 (evil-mode 1)
 ;(defalias 'evil-insert-state 'evil-emacs-state)
 
@@ -226,3 +228,5 @@
  '(mode-line-emphasis ((t (:family "Sans"))))
  '(mode-line-highlight ((t (:family "Sans"))))
  '(mode-line-inactive ((t (:family "Sans")))))
+(savehist-mode 1)
+(setq cider-repl-history-file "~/.cider-repl-history")
