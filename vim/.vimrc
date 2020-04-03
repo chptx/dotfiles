@@ -143,7 +143,7 @@ cnoremap <Esc><C-F>	<S-Right>
 let vimclojure#HighlightBuiltins = 1
 let vimclojure#ParenRainbow = 1
 
-let $GTAGSLABEL = 'native-pygments'
+"let $GTAGSLABEL = 'native-pygments'
 "let $GTAGSCONF = '/home/osboxes/dotfiles/gtags/gtags.conf'
 "set cscopeprg='gtags-cscope'
 set csprg='gtags-cscope'

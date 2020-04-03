@@ -367,8 +367,6 @@ universal-ctags|setting to use Universal Ctags plug-in parser:\
 #
 # Plug-in parser to use Pygments.
 #
-#:ctagscom=/snap/bin/universal-ctags:\
-    
 pygments-parser|Pygments plug-in parser:\
 	:tc=common:\
 	:ctagscom=no:\
