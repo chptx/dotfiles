@@ -1,0 +1,9 @@
+CSC=`pwd`
+cd ../kernel
+LNX=`pwd`
+cd /	
+find  $LNX                                                                \
+    \( -path $LNX/kernel/arch/\* ! -path $LNX/kernel/arch/x86\* \) -prune -o \
+    -path $LNX/kernel/arch/arm64\* -prune -o                                           \
+    -path $LNX/scripts\* -prune -o                                       \
+    -type f -name \*.[chxsS]  -print -o -name \*.cc -print > $CSC/cscope.files

@@ -1,0 +1,2 @@
+:let $GTAGSDBPATH = getcwd()
+:let $GTAGSROOT = fnamemodify(getcwd(), ':h')
