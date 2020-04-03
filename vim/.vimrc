@@ -130,11 +130,12 @@ cnoremap <C-N>		<Down>
 cnoremap <C-P>		<Up>
 " back one word
 cnoremap <Esc><C-B>	<S-Left>
+cnoremap <A-B>	<S-Left>
 " forward one word
 cnoremap <Esc><C-F>	<S-Right>
 
 
-set guifont=Monaco\ for\ Powerline\ 11
+"set guifont=Monaco\ for\ Powerline\ 11
 
 
 "let g:clj_highlight_builtins=1      " Highlight Clojure's builtins
@@ -142,3 +143,7 @@ set guifont=Monaco\ for\ Powerline\ 11
 let vimclojure#HighlightBuiltins = 1
 let vimclojure#ParenRainbow = 1
 
+let $GTAGSLABEL = 'native-pygments'
+"let $GTAGSCONF = '/home/osboxes/dotfiles/gtags/gtags.conf'
+"set cscopeprg='gtags-cscope'
+set csprg='gtags-cscope'
