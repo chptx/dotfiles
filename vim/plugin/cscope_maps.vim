@@ -26,7 +26,7 @@
 
 " This tests to see if vim was configured with the '--enable-cscope' option
 " when it was compiled.  If it wasn't, time to recompile vim... 
-if has("cscope")
+if has("cscope") || has("gtags-cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
 
@@ -45,7 +45,12 @@ if has("cscope")
     "    cs add $CSCOPE_DB
     "endif
 
-    if filereadable("GTAGS")
+    if filereadable("cscope.out")
+        set csprg='cscope'
+        cs add cscope.out
+    " else add the database pointed to by environment variable
+    elseif filereadable("GTAGS")
+        set csprg='gtags-cscope'
         if filereadable("GTAGSENV.rc")
             source GTAGSENV.rc
         endif

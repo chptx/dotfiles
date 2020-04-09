@@ -146,4 +146,4 @@ let vimclojure#ParenRainbow = 1
 "let $GTAGSLABEL = 'native-pygments'
 "let $GTAGSCONF = '/home/osboxes/dotfiles/gtags/gtags.conf'
 "set cscopeprg='gtags-cscope'
-set csprg='gtags-cscope'
+"set csprg='gtags-cscope'
