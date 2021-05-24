@@ -111,6 +111,7 @@ if has("cscope") || has("gtags-cscope")
     nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
     nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type

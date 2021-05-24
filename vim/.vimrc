@@ -109,7 +109,7 @@ let g:defaultExplorer = 0
 nmap <silent> <C-W><C-F> :FirstExplorerWindow<cr>
 nmap <silent> <C-W><C-B> :BottomExplorerWindow<cr>
 nmap <silent> <leader>wm :WMToggle<cr> 
-"colorscheme monokai
+colorscheme slate
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Emacs-like command-line-edit HotKey.Added by YangMingzhao
@@ -147,3 +147,6 @@ let vimclojure#ParenRainbow = 1
 "let $GTAGSCONF = '/home/osboxes/dotfiles/gtags/gtags.conf'
 "set cscopeprg='gtags-cscope'
 "set csprg='gtags-cscope'
+call plug#begin('~/.vim/plugged')
+Plug 'dart-lang/dart-vim-plugin'
+call plug#end()
